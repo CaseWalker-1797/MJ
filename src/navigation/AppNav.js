@@ -9,7 +9,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const AppNav = () => {
   return (
-    <Tab.Navigator initialRouteName="Home" screenOptions={{}}>
+    <Tab.Navigator initialRouteName="Menu" screenOptions={{}}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -31,9 +31,7 @@ const AppNav = () => {
           tabBarLabel: 'Our Menu',
           tabBarIcon: ({color, focused}) => (
             <Icon
-              source={
-                focused ? 'format-list-bulleted-square' : 'format-list-checkbox'
-              }
+              source={focused ? 'book-open' : 'book-open-outline'}
               color={color}
               size={26}
             />
@@ -45,8 +43,12 @@ const AppNav = () => {
         component={YourOrderScreen}
         options={{
           tabBarLabel: 'Your Orders',
-          tabBarIcon: ({color,focused}) => (
-            <Icon source={focused?"note-text":"note-text-outline"} color={color} size={26} />
+          tabBarIcon: ({color, focused}) => (
+            <Icon
+              source={focused ? 'file-document' : 'file-document-outline'}
+              color={color}
+              size={26}
+            />
           ),
         }}
       />

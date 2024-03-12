@@ -1,26 +1,32 @@
 import {View, Text, Image, StyleSheet, ImageBackground} from 'react-native';
 import React from 'react';
 import {horizontalScale, verticalScale} from '../utilities/Dimensions';
+import LinearGradient from 'react-native-linear-gradient';
 
 const RecomendationCard = ({item}) => {
   return (
-    <View
-      className=" bg-white justify-center items-center m-2 rounded-3xl"
-      style={styles.container}
-    >
+    <View className="m-2 rounded-3xl" style={styles.container}>
       <ImageBackground
-        className="justify-end m-2 p-2"
+        className="justify-end"
         resizeMode="cover"
         source={item.image}
+        imageStyle={{borderRadius: 20}}
         style={{
           height: verticalScale(180),
           width: horizontalScale(120),
         }}
       >
-        <View className="">
-          <Text className="text-lg font-medium">{item.name}</Text>
-          <Text className="text-base font-semibold">₹ {item.price}</Text>
-        </View>
+        <LinearGradient
+          className=" px-3 py-2 rounded-b-2xl"
+          colors={['transparent', 'saddlebrown']}
+        >
+          <View>
+            <Text className="text-sm font-bold text-white">{item.name}</Text>
+            <Text className="text-xs font-semibold text-white">
+              ₹ {item.price}
+            </Text>
+          </View>
+        </LinearGradient>
       </ImageBackground>
     </View>
   );

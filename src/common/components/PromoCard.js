@@ -1,34 +1,38 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import React from 'react';
-import {IconButton} from 'react-native-paper';
+import {IconButton, Card, Avatar, Button, Text} from 'react-native-paper';
 import {Drawables} from '../utilities/Drawables';
 import {horizontalScale, verticalScale} from '../utilities/Dimensions';
 
 const PromoCard = () => {
   return (
-    <View
-      className=" flex-row bg-white justify-evenly items-center m-2 px-4 py-2 space-x-2 rounded-3xl"
-      style={styles.container}
+    <Card
+      className="p-4"
+      mode="contained"
+      contentStyle={{flexDirection: 'row'}}
     >
-      <View className=" flex-1 justify-between items-start space-y-2">
-        <Text className="text-base">Best Seller of the Week</Text>
-        <Text className="text-xl font-bold">
-          MJ's Hazelnut Flavour Chocolate
-        </Text>
-        <View className="flex-row justify-center items-center">
-          <Text className="text-base font-medium">More Info</Text>
-          <IconButton icon="arrow-right" size={22} />
-        </View>
+      <View className="flex-1 justify-around items-start">
+        <Card.Title title="Best Seller of the Week" />
+        <Card.Content>
+          <Text className=" font-bold" variant="titleLarge">
+            MJ's Hazelnut Flavour Chocolate
+          </Text>
+        </Card.Content>
+        <Card.Actions>
+          <Text variant="titleSmall">More Info</Text>
+          <IconButton
+            mode="text"
+            icon="arrow-right"
+            size={24}
+            onPress={() => console.log('Pressed')}
+          />
+        </Card.Actions>
       </View>
-      <Image
-        className="border rounded-lg"
-        source={Drawables.plainChocolate}
-        style={{
-          height: verticalScale(160),
-          width: horizontalScale(120),
-        }}
+      <Card.Cover
+        source={Drawables.hazelnutChocolate}
+        style={{width: horizontalScale(120)}}
       />
-    </View>
+    </Card>
   );
 };
 

@@ -9,7 +9,7 @@ import {chocolateMenu} from '../../common/constants/Constants';
 const HomeScreen = () => {
   const [recomendations, setRecomendations] = useState([]);
   useEffect(() => {
-    setRecomendations(chocolateMenu.slice(0, 3));
+    setRecomendations(chocolateMenu.slice(0, 4));
   }, []);
   return (
     <SafeAreaView className="flex-1">
