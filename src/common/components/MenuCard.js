@@ -10,7 +10,7 @@ const MenuCard = ({item}) => {
   return (
     <TouchableOpacity
       className="flex-1 flex-row items-center p-2 space-x-4"
-      onPress={() => navigation.navigate('Product')}
+      onPress={() => navigation.navigate('Product', {...item})}
     >
       <Image
         className="rounded-xl"

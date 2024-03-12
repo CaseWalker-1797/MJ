@@ -9,7 +9,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const AppNav = () => {
   return (
-    <Tab.Navigator initialRouteName="Menu" screenOptions={{}}>
+    <Tab.Navigator initialRouteName="Favorite" screenOptions={{}}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}

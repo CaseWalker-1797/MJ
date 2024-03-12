@@ -12,10 +12,10 @@ const HomeScreen = () => {
     setRecomendations(chocolateMenu.slice(0, 4));
   }, []);
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
       {/* Header */}
       <CommonHeader heading={'Good day, Megha J Kamdar'} />
-      <ScrollView className="border p-2">
+      <ScrollView className=" p-2">
         {/* Promo Card */}
         <PromoCard />
         {/* Recomendations Section */}
